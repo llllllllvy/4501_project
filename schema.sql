@@ -1,8 +1,11 @@
 CREATE TABLE IF NOT EXISTS NYCzipcodes (
     ID INTEGER PRIMARY KEY,
     ZipCode TEXT,
-    geom GEOMETRY(POLYGON)
+    geom GEOMETRY(Point, 4326)
 );
+
+CREATE INDEX idx_geom
+ON NYCzipcodes USING GIST (geom);
 
 CREATE TABLE IF NOT EXISTS complaints311 (
     complaint_id INTEGER PRIMARY KEY,
