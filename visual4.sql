@@ -15,7 +15,7 @@ WITH rent_class AS(
                t1.rent_class,
                COUNT(t2.complaint_id) AS complaint_num
         FROM rent_class AS t1
-        LEFT JOIN complaints311 AS t2 ON CAST(t1.zipcode as TEXT) = t2.zipcode
+        LEFT JOIN complaints311 AS t2 ON t1.zipcode = t2.zipcode
         WHERE t2.created_date BETWEEN '2022-10-01T00:00:00.000' AND '2023-09-30T23:59:59.999'
         GROUP BY 1,2
         ORDER BY 2

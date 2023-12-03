@@ -18,7 +18,7 @@ WITH
                             t1.average_rent,
                             count(t3.complaint_id) as complaint_num     
                      FROM lowest_highest_rent_zipcode as t1
-                     LEFT JOIN complaints311 AS t3 ON cast(t1.zipcode  as text)= t3.zipcode
+                     LEFT JOIN complaints311 AS t3 ON t1.zipcode = t3.zipcode
                      GROUP BY t1.zipcode, t1.average_rent
                      ORDER BY t1.average_rent)
 SELECT t1.zipcode,
