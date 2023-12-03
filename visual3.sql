@@ -10,5 +10,5 @@ WITH tree_rent AS
               t1.tree_num,
               COUNT(t2.complaint_id) AS complaint_num
        FROM tree_rent AS t1
-       JOIN complaints311 AS t2 on CAST(t1.zipcode as TEXT) = t2.zipcode
+       JOIN complaints311 AS t2 on t1.zipcode  = t2.zipcode
        GROUP BY 1,2,3
