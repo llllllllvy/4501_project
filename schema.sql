@@ -7,6 +7,9 @@ CREATE TABLE IF NOT EXISTS NYCzipcodes (
 CREATE INDEX idx_geom
 ON NYCzipcodes USING GIST (geom);
 
+
+
+
 CREATE TABLE IF NOT EXISTS complaints311 (
     complaint_id INTEGER PRIMARY KEY,
     created_date TIMESTAMP,
@@ -17,6 +20,10 @@ CREATE TABLE IF NOT EXISTS complaints311 (
     latitiude FLOAT,
     longitude FLOAT
 );
+
+CREATE INDEX idx_ZipCode_c
+ON complaints311 (ZipCode);
+
 
 CREATE TABLE IF NOT EXISTS trees (
     tree_id INTEGER PRIMARY KEY,
@@ -29,6 +36,8 @@ CREATE TABLE IF NOT EXISTS trees (
     x_sp FLOAT,
     y_sp FLOAT
 );
+CREATE INDEX idx_ZipCode_t
+ON trees (ZipCode);
 
 CREATE TABLE IF NOT EXISTS rents (
     RegionID INTEGER PRIMARY KEY,
@@ -138,4 +147,6 @@ CREATE TABLE IF NOT EXISTS rents (
     m2023_07 FLOAT,
     m2023_08 FLOAT,
     m2023_09 FLOAT   
-)
+);
+CREATE INDEX idx_ZipCode_r
+ON rents (ZipCode);
