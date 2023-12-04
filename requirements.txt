@@ -1,0 +1,20 @@
+import requests
+import json
+import pandas as pd
+import geopandas as gpd
+import numpy as np
+from sqlalchemy import create_engine
+import psycopg2
+from datetime import datetime
+import seaborn as sns
+import geoplot as gplt
+import geoplot.crs as gcrs
+from shapely.geometry import Point
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.animation import FuncAnimation
+from matplotlib.cm import ScalarMappable
+
+!pip install geoplot
+!pip install psycopg2
