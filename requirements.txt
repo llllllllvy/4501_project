@@ -1,0 +1,16 @@
+# conda packages
+requests == 2.31.0
+json == 0.9.6
+pandas == 1.5.3
+numpy == 1.24.3
+sqlalchemy == 1.4.39
+seaborn == 0.12.2
+
+
+# pip packages
+psycopg2 == 2.9.9
+geoplot == 0.5.1
+geopandas == 0.14.1
+shapely == 2.0.2
+matplotlib == 3.8.2
+
